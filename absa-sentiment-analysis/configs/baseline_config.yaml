@@ -1,0 +1,24 @@
+# Baseline ABSA: TF-IDF + Logistic Regression / SVM
+seed: 42
+data_dir: data
+processed_dir: data/processed
+checkpoint_dir: results/checkpoints
+metrics_dir: results/metrics
+figures_dir: results/figures
+
+# Data
+# SemEval tabular train CSVs in data/raw (sentence + aspect + polarity)
+csv_train_files:
+  - restaurants_train.csv
+  - laptops_train.csv
+raw_xml: null  # optional: semeval XML filename in data/raw
+rebuild_processed: false  # set true or use --rebuild-data to refresh processed splits
+test_size: 0.1
+val_size: 0.1
+
+# Model
+classifier: logistic  # logistic | svm
+max_features: 10000
+ngram_range: [1, 2]
+C: 1.0
+class_weight: balanced

@@ -1,2 +1,15 @@
-# Aspect-Based-Sentiment-Analysis-with-Transformer-Fine-Tuning
-This project fine-tunes a transformer model (BERT / RoBERTa) to perform ABSA on real-world  product reviews, enabling businesses to pinpoint exactly what customers love or hate — at the  feature level, not just the product level.
+# Aspect-Based Sentiment Analysis (Transformer Fine-Tuning)
+
+The implementation, data layout, configs, and training scripts live in **`absa-sentiment-analysis/`**.
+
+## Quick start
+
+```bash
+cd absa-sentiment-analysis
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python src/train.py --model baseline
+```
+
+See **`absa-sentiment-analysis/README.md`** for dataset setup, all models, and options (`--rebuild-data`, etc.).

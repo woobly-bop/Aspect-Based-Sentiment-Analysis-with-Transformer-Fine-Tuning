@@ -1,0 +1,31 @@
+# Bi-LSTM ABSA with GloVe
+seed: 42
+data_dir: data
+processed_dir: data/processed
+checkpoint_dir: results/checkpoints
+metrics_dir: results/metrics
+figures_dir: results/figures
+
+# Data
+csv_train_files:
+  - restaurants_train.csv
+  - laptops_train.csv
+raw_xml: null
+rebuild_processed: false
+test_size: 0.1
+val_size: 0.1
+glove_path: data/raw/glove.6B.100d.txt  # set null to use random embeddings
+
+# Model
+embedding_dim: 100
+hidden_size: 128
+num_layers: 2
+dropout: 0.5
+max_len: 128
+
+# Training
+batch_size: 32
+num_epochs: 20
+learning_rate: 0.001
+use_cuda: true
+early_stopping_patience: 5

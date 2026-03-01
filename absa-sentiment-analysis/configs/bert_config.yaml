@@ -1,0 +1,23 @@
+# BERT fine-tuning for ABSA
+model_name: bert-base-uncased
+num_labels: 4
+max_length: 128
+num_train_epochs: 4
+learning_rate: 2.0e-5
+batch_size: 16
+warmup_ratio: 0.1
+weight_decay: 0.01
+seed: 42
+
+data_dir: data
+processed_dir: data/processed
+checkpoint_dir: results/checkpoints
+metrics_dir: results/metrics
+figures_dir: results/figures
+csv_train_files:
+  - restaurants_train.csv
+  - laptops_train.csv
+raw_xml: null
+rebuild_processed: false
+test_size: 0.1
+val_size: 0.1
